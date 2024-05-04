@@ -43,8 +43,32 @@ Checkpointer is responsible for flushing everything - i.e. both WAL records and 
 
 #### Logger
 
-Logger is responsible for logging the status of the database.
+Logger is responsible for writing all the logs into the disk.
 
 #### Autovacuum Launcher and Workers
 
 Autovacuum worker is responsible for cleaning up the tuples that have older versions and are not being accessed by any of the processes.
+
+The number of autovacuum works is capped by the parameter `autovacuum_max_workers`.
+
+#### WAL Archiver
+
+WAL Archiver is responsible for archiving all the WAL records for historical purposes, such that a database can be brought to the newest state from 0 when needed.
+
+#### WAL Reciever
+
+WAL Reciever is responsible for recieving WAL records.
+
+#### WAL Writer
+
+WAL Writer is responsible for flushing the WAL records into the disk. Each time a commit succeeds, WAL records are flushed into the disk.
+
+#### WAL Sender
+
+A WAL Sender is responsible for sending the WAL records to the replicas, from the master instance.
+
+The number of WAL Senders is capped by the parameter `max_val_senders`.
+
+#### Startup Process
+
+The Startup Process is responsible for checking the state of the database - i.e. it checks whether the data stored in the Pages are up-to-date with what has been recorded in the WAL records. If the Pages are found out of date, the Startup process will try to re-do what has been recorded in the WAL records, in order to load the up-to-date data into the Pages, before the Post Master Process is started.
