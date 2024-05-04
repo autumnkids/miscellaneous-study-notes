@@ -1,0 +1,9 @@
+site_name: My Study Notes
+nav:
+  - Home: index.md
+  - Database: database.md
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
