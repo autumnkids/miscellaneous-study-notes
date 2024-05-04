@@ -29,4 +29,22 @@ The number of backend process is capped by the parameter `max_connections`.
 
 #### Background Workers
 
-A background worker is responsible for executing the query or command that a consumer initiated
+A background worker is responsible for executing the query or command that a consumer initiated.
+
+The number of background workers is capped by the parameter `max_worker_processes`.
+
+#### Background Writers
+
+A background writer is responsible for flushing the data that is stored in a Page into the filesystem, which will eventually write the data into the disk. It wakes up occasionally to clean up dirty Pages/Shared Memory.
+
+#### Checkpointer
+
+Checkpointer is responsible for flushing everything - i.e. both WAL records and Pages to the disk, and creating a checkpoint, indicating that everything now is consistent.
+
+#### Logger
+
+Logger is responsible for logging the status of the database.
+
+#### Autovacuum Launcher and Workers
+
+Autovacuum worker is responsible for cleaning up the tuples that have older versions and are not being accessed by any of the processes.
