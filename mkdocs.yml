@@ -1,4 +1,6 @@
 site_name: My Study Notes
+repo_url: https://github.com/autumnkids/miscellaneous-study-notes
+repo_name: autumnkids/miscellaneous-study-notes
 nav:
   - Home: index.md
   - Database: database.md
