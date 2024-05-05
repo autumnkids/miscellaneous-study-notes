@@ -9,20 +9,22 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../mongodb/">
       
       
+        <link rel="next" href="../../dsa/b-tree/">
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
-        <title>Database - My Study Notes</title>
+        <title>Performance Tips - My Knowledge Base</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
       
       
 
@@ -41,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#database" class="md-skip">
+        <a href="#performance-tips" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +78,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="My Study Notes" class="md-header__button md-logo" aria-label="My Study Notes" data-md-component="logo">
+    <a href="../.." title="My Knowledge Base" class="md-header__button md-logo" aria-label="My Knowledge Base" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -90,13 +92,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            My Study Notes
+            My Knowledge Base
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Database
+              Performance Tips
             
           </span>
         </div>
@@ -171,7 +173,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -189,16 +191,39 @@
     
   
   
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../database-internal/" class="md-tabs__link">
+          
   
     
   
   Database
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dsa/b-tree/" class="md-tabs__link">
+          
+  
+    
+  
+  DSA
+
+        </a>
+      </li>
+    
   
 
       
@@ -230,13 +255,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="My Study Notes" class="md-nav__button md-logo" aria-label="My Study Notes" data-md-component="logo">
+    <a href="../.." title="My Knowledge Base" class="md-nav__button md-logo" aria-label="My Knowledge Base" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    My Study Notes
+    My Knowledge Base
   </label>
   
     <div class="md-nav__source">
@@ -260,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -281,19 +306,133 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database-internal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Database Internal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postgresql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PostgreSQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MongoDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Database
+    Performance Tips
   </span>
   
 
@@ -304,7 +443,7 @@
         
   
   <span class="md-ellipsis">
-    Database
+    Performance Tips
   </span>
   
 
@@ -316,8 +455,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -326,153 +463,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#postgresql" class="md-nav__link">
+  <a href="#performance-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      PostgreSQL
+      Performance Tips
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="PostgreSQL">
+    <nav class="md-nav" aria-label="Performance Tips">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#specialties" class="md-nav__link">
+  <a href="#prepared-statements" class="md-nav__link">
     <span class="md-ellipsis">
-      Specialties
+      Prepared Statements
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-it-works-internally" class="md-nav__link">
+  <a href="#index" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works Internally
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How It Works Internally">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
+      Index
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-master-process" class="md-nav__link">
+  <a href="#partition" class="md-nav__link">
     <span class="md-ellipsis">
-      Post Master Process
+      Partition
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backend-processes" class="md-nav__link">
+  <a href="#copy" class="md-nav__link">
     <span class="md-ellipsis">
-      Backend Processes
+      Copy
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#background-workers" class="md-nav__link">
+  <a href="#separation-of-concerns" class="md-nav__link">
     <span class="md-ellipsis">
-      Background Workers
+      Separation of Concerns
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#background-writers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Background Writers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checkpointer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Checkpointer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logger" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logger
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autovacuum-launcher-and-workers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Autovacuum Launcher and Workers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wal-archiver" class="md-nav__link">
-    <span class="md-ellipsis">
-      WAL Archiver
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wal-reciever" class="md-nav__link">
-    <span class="md-ellipsis">
-      WAL Reciever
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wal-writer" class="md-nav__link">
-    <span class="md-ellipsis">
-      WAL Writer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wal-sender" class="md-nav__link">
-    <span class="md-ellipsis">
-      WAL Sender
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#startup-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Startup Process
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -484,6 +525,84 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DSA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            DSA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsa/b-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -506,8 +625,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -516,153 +633,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#postgresql" class="md-nav__link">
+  <a href="#performance-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      PostgreSQL
+      Performance Tips
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="PostgreSQL">
+    <nav class="md-nav" aria-label="Performance Tips">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#specialties" class="md-nav__link">
+  <a href="#prepared-statements" class="md-nav__link">
     <span class="md-ellipsis">
-      Specialties
+      Prepared Statements
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-it-works-internally" class="md-nav__link">
+  <a href="#index" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works Internally
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How It Works Internally">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
+      Index
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-master-process" class="md-nav__link">
+  <a href="#partition" class="md-nav__link">
     <span class="md-ellipsis">
-      Post Master Process
+      Partition
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backend-processes" class="md-nav__link">
+  <a href="#copy" class="md-nav__link">
     <span class="md-ellipsis">
-      Backend Processes
+      Copy
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#background-workers" class="md-nav__link">
+  <a href="#separation-of-concerns" class="md-nav__link">
     <span class="md-ellipsis">
-      Background Workers
+      Separation of Concerns
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#background-writers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Background Writers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checkpointer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Checkpointer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logger" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logger
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autovacuum-launcher-and-workers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Autovacuum Launcher and Workers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wal-archiver" class="md-nav__link">
-    <span class="md-ellipsis">
-      WAL Archiver
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wal-reciever" class="md-nav__link">
-    <span class="md-ellipsis">
-      WAL Reciever
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wal-writer" class="md-nav__link">
-    <span class="md-ellipsis">
-      WAL Writer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wal-sender" class="md-nav__link">
-    <span class="md-ellipsis">
-      WAL Sender
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#startup-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Startup Process
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -689,51 +710,24 @@
   
 
 
-<h1 id="database">Database</h1>
-<h2 id="postgresql">PostgreSQL</h2>
-<h3 id="specialties">Specialties</h3>
-<ul>
-<li>Multi-version concurrency control<ul>
-<li>i.e. A row of records is versioned into multiple tuples that are representing the same logical row but in different states/versions. The newest version represents the up-to-date record for that row. Different processes can access a record concurrently.</li>
-</ul>
-</li>
-<li>Can define custom type<ul>
-<li>ProgreSQL allows users to define custome types/objects in a table schema.</li>
-</ul>
-</li>
-</ul>
-<h3 id="how-it-works-internally">How It Works Internally</h3>
-<p><em>Study notes from <a href="https://youtu.be/Q56kljmIN14?si=zSISqnNQNV-7KUJe">presentation by Hussein Nasser</a>.</em></p>
-<h4 id="overview">Overview</h4>
-<p><img alt="postgres-architecture" src="../images/postgres-architecture.png" /></p>
-<h4 id="post-master-process">Post Master Process</h4>
-<p>A parent process that starts at the early stage of the application. Exposes the application to port 5432, such that it's ready for connection.</p>
-<h4 id="backend-processes">Backend Processes</h4>
-<p>Each backend process is responsible for maintaining a connection to its consumer.</p>
-<p>The number of backend process is capped by the parameter <code>max_connections</code>.</p>
-<h4 id="background-workers">Background Workers</h4>
-<p>A background worker is responsible for executing the query or command that a consumer initiated.</p>
-<p>The number of background workers is capped by the parameter <code>max_worker_processes</code>.</p>
-<h4 id="background-writers">Background Writers</h4>
-<p>A background writer is responsible for flushing the data that is stored in a Page into the filesystem, which will eventually write the data into the disk. It wakes up occasionally to clean up dirty Pages/Shared Memory.</p>
-<h4 id="checkpointer">Checkpointer</h4>
-<p>Checkpointer is responsible for flushing everything - i.e. both WAL records and Pages to the disk, and creating a checkpoint, indicating that everything now is consistent.</p>
-<h4 id="logger">Logger</h4>
-<p>Logger is responsible for writing all the logs into the disk.</p>
-<h4 id="autovacuum-launcher-and-workers">Autovacuum Launcher and Workers</h4>
-<p>Autovacuum worker is responsible for cleaning up the tuples that have older versions and are not being accessed by any of the processes.</p>
-<p>The number of autovacuum works is capped by the parameter <code>autovacuum_max_workers</code>.</p>
-<h4 id="wal-archiver">WAL Archiver</h4>
-<p>WAL Archiver is responsible for archiving all the WAL records for historical purposes, such that a database can be brought to the newest state from 0 when needed.</p>
-<h4 id="wal-reciever">WAL Reciever</h4>
-<p>WAL Reciever is responsible for recieving WAL records.</p>
-<h4 id="wal-writer">WAL Writer</h4>
-<p>WAL Writer is responsible for flushing the WAL records into the disk. Each time a commit succeeds, WAL records are flushed into the disk.</p>
-<h4 id="wal-sender">WAL Sender</h4>
-<p>A WAL Sender is responsible for sending the WAL records to the replicas, from the master instance.</p>
-<p>The number of WAL Senders is capped by the parameter <code>max_val_senders</code>.</p>
-<h4 id="startup-process">Startup Process</h4>
-<p>The Startup Process is responsible for checking the state of the database - i.e. it checks whether the data stored in the Pages are up-to-date with what has been recorded in the WAL records. If the Pages are found out of date, the Startup process will try to re-do what has been recorded in the WAL records, in order to load the up-to-date data into the Pages, before the Post Master Process is started.</p>
+  <h1>Performance Tips</h1>
+
+<h2 id="performance-tips">Performance Tips</h2>
+<p>The following tips for performance improvement is not tight to a specific DB solution. They can be applied to many of the DB solutions nowadays.</p>
+<h3 id="prepared-statements">Prepared Statements</h3>
+<p>Like GraphQL, each document attached in a request needs to be parsed and validated before execution. If a statement is prepared, the same requests that come with the same statement can skip this process, and thus improves the performance.</p>
+<p>However, prepared statements only work in the same session. If a statement is not prepared in a session, it needs to be prepared before execution.</p>
+<p>This also doesn't help in performance if a statement itself is time consuming - e.g. loading a large amount of data.</p>
+<h3 id="index">Index</h3>
+<p>This is also a common technique in database to accelerate data lookup. This technique works similarly to a hash table where the key is generated by the specified column, and the value is the corresponding row of records. A common implementation of Index is B+ Tree.</p>
+<h3 id="partition">Partition</h3>
+<p>This technique segments the data into different partitions according to the column(s) specified, such that queries can scan only the partitions of data that are interested without scanning through all the records one by one.</p>
+<p>However, be sure to benchmark the performance before determining which columns to use for partitioning. Scanning through a large amount of partitions would not result in performance improvement.</p>
+<p>Also, be sure to keep the partitions up-to-date when data are updated in the database. A common practice is to leverage cron job to regularly update the partitions created such that queries run against the partitions would not be performed with stale data.</p>
+<h3 id="copy">Copy</h3>
+<p>To improve INSERT performance for a large amount of data, the COPY command can be used to import the data from either a file (e.g. a csv file) or standard input to the database.</p>
+<h3 id="separation-of-concerns">Separation of Concerns</h3>
+<p>This is basically an idea of horizontal scaling, where READ replicas are created to take care of the READ concerns specifically, such that the main instance of the DB can focus on scaling for the WRITE operations. This is usually a technique used when the amount of READ operations is significantly larger than the WRITE operations.</p>
 
 
 
@@ -780,10 +774,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
     
   </body>
