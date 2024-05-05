@@ -1,4 +1,4 @@
-site_name: My Study Notes
+site_name: My Knowledge Base
 repo_url: https://github.com/autumnkids/miscellaneous-study-notes
 repo_name: autumnkids/miscellaneous-study-notes
 nav:
@@ -6,6 +6,7 @@ nav:
   - Database:
     - Database Internal: database/database-internal.md
     - PostgreSQL: database/postgresql.md
+    - MongoDB: database/mongodb.md
     - Performance Tips: database/performance-tips.md
 theme:
   name: material

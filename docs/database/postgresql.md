@@ -9,7 +9,7 @@
 
 ## How It Works Internally
 
-_Study notes from [presentation by Hussein Nasser](https://youtu.be/Q56kljmIN14?si=zSISqnNQNV-7KUJe)._
+_Knowledge collected from [presentation by Hussein Nasser](https://youtu.be/Q56kljmIN14?si=zSISqnNQNV-7KUJe)._
 
 ### Overview
 
