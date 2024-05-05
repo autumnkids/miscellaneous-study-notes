@@ -3,9 +3,14 @@ repo_url: https://github.com/autumnkids/miscellaneous-study-notes
 repo_name: autumnkids/miscellaneous-study-notes
 nav:
   - Home: index.md
-  - Database: database.md
+  - Database:
+    - Database Internal: database/database-internal.md
+    - PostgreSQL: database/postgresql.md
+    - Performance Tips: database/performance-tips.md
 theme:
   name: material
   features:
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.path
+    - navigation.indexes
