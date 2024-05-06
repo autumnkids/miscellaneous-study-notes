@@ -498,6 +498,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    B Tree
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -507,6 +518,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -540,6 +579,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -558,7 +614,37 @@
 
 <h1 id="b-tree">B Tree</h1>
 <p>A balanced binary search tree that improves search and insertion operations with less memory and I/Os.</p>
-<p>Each node in the tree can contains multiple keys that allows the tree to have large branching factor. And thus, the tree can come with lower height.</p>
+<p>Each node in the tree can contains multiple keys that allows the tree to have large branching factor. And thus, the tree can come with smaller height.</p>
+<p>A B Tree algorithm copies selected blocks from the disk to the memory, and writes back the blocks that have changed onto disk. It only keeps a constant number of blocks in the memory at any time, and thus does not limit the size of the tree that can be handled.</p>
+<h2 id="properties">Properties</h2>
+<p>Assuming that there is a B Tree with an order of <code>m</code>, and a minimum degree of <code>t</code> (which is usually defined by the block size of a disk):</p>
+<ul>
+<li>Each internal node (excluding root) has the number of child nodes within the range of <code>[ceil(m / 2), m]</code>, or <code>[t, 2t]</code>.</li>
+<li>The root node can have either 2 nodes, or 0 - if the tree has only one node, which is the root.</li>
+<li>The number of keys contained in each node equals to <code>the number of child nodes - 1</code>.</li>
+<li>The root node may contain a minimum of 1 key.</li>
+<li>All keys of a node are sorted in increasing order.</li>
+<li>The range of keys follows the property of a Binary Search Tree where the range of keys within a child node is bounded by the range of keys within its parent node. For example:<ul>
+<li>childNode[0].keys[i] &lt; parentNode.keys[0], i.e. the first branch of a node may only contains keys that are less than the first key in the node.</li>
+<li>childNode[1].keys[i] &gt; parentNode.keys[0] &amp;&amp; childNode[1].keys[i] &lt; parentNode.keys[1], i.e. the second branch of a node may only contains keys that are greater than the first key in the node and less than the second key in the node.</li>
+<li>and so on.</li>
+</ul>
+</li>
+<li>All leaf nodes are at the same level.</li>
+<li>The time complexity for search, insertion and deletion operation is O(logn).</li>
+</ul>
+<h1 id="b-tree_1">B+ Tree</h1>
+<p>B+ Tree is an advanced usage of B Tree.</p>
+<h2 id="properties_1">Properties</h2>
+<p>Other than the properties maintained in a B Tree, a B+ Tree also comes with the following properties:</p>
+<ul>
+<li>The data pointers are all stored in the leaf nodes, while a B Tree may store both the data and the keys in each internal node.</li>
+<li>The internal nodes in a B+ Tree are used to guide the search.</li>
+<li>All leaf nodes form a linked list for efficient range-based queries.</li>
+<li>A B+ Tree usually comes with higher order - i.e. more keys in each node.</li>
+<li>A B+ Tree allows key duplication in leaf nodes, while a B Tree does not allow.</li>
+<li>A B+ Tree requires less disk I/O, since it supports sequential reads with the linked list structure in the leaf nodes.</li>
+</ul>
 
 
 
