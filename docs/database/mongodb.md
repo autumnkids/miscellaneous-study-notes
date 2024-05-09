@@ -28,6 +28,5 @@ Another downside is that it only allows a single write to the DB at a time, wher
 
 ### WiredTiger v1
 
-WiredTiger is a Storage Engine acquired by MongoDB. It comes with better performance where compression and concurrent writes are introduced. But the tradeoff in v1 is that both the `_id` lookup and the secondary index lookup are now required two B+ Tree lookup, since a hidden cluster index is introduced between the index and the BSON document in this version of implementation.
+WiredTiger is a Storage Engine acquired by MongoDB. It comes with better performance where concurrent writes is introduced. But the tradeoff in v1 is that both the `_id` lookup and the secondary index lookup are now required two B+ Tree lookup, since a hidden clustered index is introduced between the index and the BSON document in this version of implementation. The `_id` field firstly points to a `recordId` which then is used in the hidden clustered index to locate the document from the disk.
 
-The upside is that
