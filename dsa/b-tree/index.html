@@ -12,6 +12,8 @@
         <link rel="prev" href="../../database/performance-tips/">
       
       
+        <link rel="next" href="../b-plus-tree/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
@@ -448,6 +450,8 @@
       
         
       
+        
+      
     
     
       
@@ -552,6 +556,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../b-plus-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B+ Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -632,18 +657,6 @@
 </li>
 <li>All leaf nodes are at the same level.</li>
 <li>The time complexity for search, insertion and deletion operation is O(logn).</li>
-</ul>
-<h1 id="b-tree_1">B+ Tree</h1>
-<p>B+ Tree is an advanced usage of B Tree.</p>
-<h2 id="properties_1">Properties</h2>
-<p>Other than the properties maintained in a B Tree, a B+ Tree also comes with the following properties:</p>
-<ul>
-<li>The data pointers are all stored in the leaf nodes, while a B Tree may store both the data and the keys in each internal node.</li>
-<li>The internal nodes in a B+ Tree are used to guide the search.</li>
-<li>All leaf nodes form a linked list for efficient range-based queries.</li>
-<li>A B+ Tree usually comes with higher order - i.e. more keys in each node.</li>
-<li>A B+ Tree allows key duplication in leaf nodes, while a B Tree does not allow.</li>
-<li>A B+ Tree requires less disk I/O, since it supports sequential reads with the linked list structure in the leaf nodes.</li>
 </ul>
 
 

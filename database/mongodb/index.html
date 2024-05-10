@@ -452,6 +452,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How It Works Internally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary-json-bson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary JSON (BSON)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-_id-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      The _id field
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secondary Index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mmap_v1-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      MMAP_v1 (&lt; 4.2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiredtiger-v1-42-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      WiredTiger v1 (4.2 - 5.2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiredtiger-v2-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      WiredTiger v2 (&gt; 5.3)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -499,6 +559,8 @@
   
     
     
+      
+        
       
         
       
@@ -554,6 +616,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dsa/b-plus-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B+ Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -594,6 +677,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How It Works Internally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary-json-bson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary JSON (BSON)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-_id-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      The _id field
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secondary Index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mmap_v1-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      MMAP_v1 (&lt; 4.2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiredtiger-v1-42-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      WiredTiger v1 (4.2 - 5.2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiredtiger-v2-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      WiredTiger v2 (&gt; 5.3)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -615,8 +758,32 @@
 
 
 <h1 id="mongodb">MongoDB</h1>
-<p><em>Knowledge collected from the <a href="https://medium.com/@hnasr/mongodb-internal-architecture-9a32f1403d6f">article</a> and presentation by Hussein Nasser.</em></p>
+<p><em>Knowledge collected from the <a href="https://medium.com/@hnasr/mongodb-internal-architecture-9a32f1403d6f">article</a> and <a href="https://youtu.be/ONzdr4SmOng">presentation</a> by Hussein Nasser.</em></p>
 <h2 id="how-it-works-internally">How It Works Internally</h2>
+<p>MongoDB is a document based database, where schema is not strictly defined between documents in a collection - i.e. one field(s) can exist in one document but not the others in the same collection.</p>
+<h3 id="binary-json-bson">Binary JSON (BSON)</h3>
+<p>BSON is the format that stores the JSON document in the disk. [<a href="https://www.mongodb.com/json-and-bson">Reference from the official doc</a>]</p>
+<blockquote>
+<p>BSON stands for “Binary JSON,” and that’s exactly what it was invented to be. BSON’s binary structure encodes type and length information, which allows it to be traversed much more quickly compared to JSON.</p>
+</blockquote>
+<h3 id="the-_id-field">The <code>_id</code> field</h3>
+<p>An <code>_id</code> is created when a document is created in a collection, which is a field with a size of 12 bytes. The reason why it's large is because MongoDB tries to make it globaly unique across machines or shards for scaling purposes. This field is used to locate a document eventually, but the implementation of how the <code>_id</code> field map to a document evolves in different versions.</p>
+<h3 id="secondary-index">Secondary Index</h3>
+<p>The secondary index is used to accelerate the lookup of specific information in a document. Similarly, a secondary index locates a document eventually based on the specified field, but the implementation varies during evolution of the Storage Engine in MongoDB.</p>
+<h3 id="mmap_v1-42">MMAP_v1 (&lt; 4.2)</h3>
+<p>MMAP_v1 is the first version of the MongoDB Storage Engine, which maps the <code>_id</code> field to a <code>Diskloc</code> that locates a document in the disk with a filename and an offset. The downside of this design is that the offset needs to be maintained carefully for each update, otherwise the lookup of documents will be off.</p>
+<p>Another downside is that it only allows a single write to the DB at a time, where a global lock is required when it happens, which could lead to performance concerns as it scales.</p>
+<h3 id="wiredtiger-v1-42-52">WiredTiger v1 (4.2 - 5.2)</h3>
+<p>WiredTiger is a Storage Engine acquired by MongoDB. It comes with better performance where two concurrent writes to different documents in the same collection becomes possible.</p>
+<p>This implementation inroduced a hidden clustered index where the actions required to locate a document involved two B+ Tree lookups. The <code>_id</code> field is firstly used to locate a <code>recordId</code>, which then is used in the hidden clustered index to locate the corresponding document. With this design, the storage engine is able to load more documents with fewer I/Os since the <code>recordId</code> is relatively small - i.e. 64 bit.</p>
+<blockquote>
+<p>A clustered index is an index where a lookup gives you all what you need, all fields are stored in the leaf page resulting in what is commonly known in database systems as Index-only scans.</p>
+</blockquote>
+<p>However, the downside is that each operation now requires two B+ Tree lookups, which may require more computer resources to operate on, which could lead to performance concerns.</p>
+<h3 id="wiredtiger-v2-53">WiredTiger v2 (&gt; 5.3)</h3>
+<p>An upgraded version of this storage engine removes the lookup between the <code>_id</code> index and the <code>recordId</code>, and instead, maintains the <code>_id</code> index and the documents in a clustered index such that a lookup with primary index only needs to traverse one B+ Tree. This architecture is called Clustered Collections Architecture.</p>
+<p>The secondary index though now has to point to the <code>_id</code> field with this option. Since the <code>_id</code> field is a field with a size of 12 bytes, this design results in loading a lot more data in secondary indexes, comparing to the v1 design where the <code>recordId</code> is only 64 bits. This also means that the secondary index would still have to do two lookups in this design.</p>
+<p>However, MongoDB gives users the option to cluster the collections or not, which would be a design tradeoff to think about when using MongoDB.</p>
 
 
 
