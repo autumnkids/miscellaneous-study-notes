@@ -10,6 +10,7 @@ nav:
     - Performance Tips: database/performance-tips.md
   - DSA:
     - B Tree: dsa/b-tree.md
+    - B+ Tree: dsa/b-plus-tree.md
 theme:
   name: material
   features:
