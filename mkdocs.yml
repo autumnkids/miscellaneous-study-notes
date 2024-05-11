@@ -11,6 +11,8 @@ nav:
   - DSA:
     - B Tree: dsa/b-tree.md
     - B+ Tree: dsa/b-plus-tree.md
+  - Miscellaneous:
+    - Ditching TypeScript: miscellaneous/ditching-typescript.md
 theme:
   name: material
   features:
